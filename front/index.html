@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Fotos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciador de Fotos</h1>
+        
+        <!-- Formulário de Upload -->
+        <div class="upload-section">
+            <h2>Adicionar Nova Foto</h2>
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="foto">Selecione uma imagem:</label>
+                    <input type="file" id="foto" name="foto" accept=".jpg, .jpeg, .png" required>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        
+        <!-- Galeria de Fotos -->
+        <div class="gallery-section">
+            <h2>Galeria de Fotos</h2>
+            <div id="gallery" class="gallery">
+                <!-- As fotos serão carregadas aqui via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Edição -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Descrição</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <div class="form-group">
+                    <label for="editDescricao">Nova Descrição:</label>
+                    <textarea id="editDescricao" name="editDescricao" required></textarea>
+                </div>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
